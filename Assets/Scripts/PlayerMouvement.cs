@@ -30,25 +30,7 @@ public class PlayerMouvement : MonoBehaviour {
 
     void Mouvement()
     {
-        if (Input.GetKey("up"))
-        {
-            Vector3 n = new Vector3(0, 0, mouvementSpeed * Time.deltaTime);
-            rb.AddForce(n, ForceMode.Force);
-        }
-        if (Input.GetKey("down"))
-        {
-            Vector3 n = new Vector3(0, 0, -mouvementSpeed * Time.deltaTime);
-            rb.AddForce(n, ForceMode.Force);
-        }
-        if (Input.GetKey("left"))
-        {
-            Vector3 n = new Vector3(-mouvementSpeed * Time.deltaTime, 0, 0);
-            rb.AddForce(n, ForceMode.Force);
-        }
-        if (Input.GetKey("right"))
-        {
-            Vector3 n = new Vector3(mouvementSpeed * Time.deltaTime, 0, 0);
-            rb.AddForce(n, ForceMode.Force);
-        }
+        rb.AddForce(new Vector3(Input.GetAxis("Horizontal") * mouvementSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * mouvementSpeed * Time.deltaTime)
+                    , ForceMode.Force);
     }
 }
