@@ -49,6 +49,7 @@ public class Ball : MonoBehaviour, IResetable {
         CritUpdate();
 
         parallaxBallPosition = transform.position.x / 105.0f;
+        //Mathf.Clamp
     }
     
     void OnCollisionEnter(Collision collision)

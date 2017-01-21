@@ -19,8 +19,11 @@ public class ParallaxWater : MonoBehaviour {
 
     void LateUpdate()
     {
-        var newPos = new Vector3(transform.position.x + (maxOffset * ball.parallaxBallPosition * Time.deltaTime), transform.position.y, transform.position.z);
-        print(newPos);
+        var max_X = Mathf.Clamp(transform.position.x + (maxOffset * ball.parallaxBallPosition * Time.deltaTime), -30, 30);
+
+        print("Val : " + (transform.position.x + (maxOffset * ball.parallaxBallPosition * Time.deltaTime)));
+
+        var newPos = new Vector3(max_X, transform.position.y, transform.position.z);
         transform.position = newPos;
     }
 }
