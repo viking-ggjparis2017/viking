@@ -16,9 +16,6 @@ public class Ball : MonoBehaviour, IResetable {
     Material Player01OwnerMat, Player02OwnerMat;
 
     [SerializeField]
-    ScoreManager scoreMgr;
-
-    [SerializeField]
     private Material _critStatusMat = null;
 
     [SerializeField]
