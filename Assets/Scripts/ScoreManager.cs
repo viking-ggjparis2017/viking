@@ -122,12 +122,17 @@ public class ScoreManager : MonoBehaviour {
     public void ResetScene(bool newGame)
     {
         foreach (var obj in GameObject.FindGameObjectsWithTag("Player"))
-        {
             obj.GetComponent<PlayerMouvement>().Reset();
-        }
 
         foreach (var obj in GameObject.FindGameObjectsWithTag("Ball"))
             obj.GetComponent<Ball>().Reset();
+
+        foreach (var sw in GameObject.FindGameObjectsWithTag("Shockwave"))
+        {
+            var swScript = sw.GetComponent<Shockwave>();
+            if (swScript.IsActive())
+                swScript.SetInactive();
+        }
 
         if (newGame)
             AlreadyWon = false;

@@ -55,8 +55,7 @@ public class Shockwave : MonoBehaviour {
 
         if (_currentLifeTime >= _lifetime)
         {
-            _selfObject.SetActive(false);
-            _active = false;
+            SetInactive();
         }
 
         _selfTransform.localScale = Vector3.Lerp(_startScale, _endScale, _currentLifeTime / _lifetime);
@@ -113,6 +112,12 @@ public class Shockwave : MonoBehaviour {
     public bool IsActive()
     {
         return _active;
+    }
+
+    public void SetInactive()
+    {
+        _selfObject.SetActive(false);
+        _active = false;
     }
 
     public void SetOwner(int owner)
