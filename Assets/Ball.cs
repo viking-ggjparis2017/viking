@@ -58,7 +58,9 @@ public class Ball : MonoBehaviour, IResetable {
     {
         transform.position = resetPosition;
         transform.rotation = resetRotation;
-        GetComponent<Rigidbody>().velocity.Set(0.0f, 0.0f, 0.0f);
+
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
     /*
