@@ -17,13 +17,13 @@ public class ScoreManager : MonoBehaviour {
 	
 	void Update () {}
 
-    void IncrementPlayer01Score()
+    public void IncrementPlayer01Score()
     {
         ++Player_1_Score;
         UpdatePlayerScore();
     }
 
-    void IncrementPlayer02Score()
+    public void IncrementPlayer02Score()
     {
         ++Player_2_Score;
         UpdatePlayerScore();

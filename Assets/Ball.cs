@@ -13,6 +13,9 @@ public class Ball : MonoBehaviour {
     [SerializeField]
     Material Player01OwnerMat, Player02OwnerMat;
 
+    [SerializeField]
+    ScoreManager scoreMgr;
+
     Renderer rd;
 
     // Use this for initialization
@@ -35,11 +38,13 @@ public class Ball : MonoBehaviour {
         if (collision.gameObject == Player01)
         {
             owner = Player01;
+            scoreMgr.IncrementPlayer01Score();
             rd.material = Player01OwnerMat;
         }
         else if (collision.gameObject == Player02)
         {
             owner = Player02;
+            scoreMgr.IncrementPlayer02Score();
             rd.material = Player02OwnerMat;
         }
     }
