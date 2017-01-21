@@ -53,22 +53,16 @@ public class Ball : MonoBehaviour, IResetable {
 
         if (collidedObject.tag == "Player")
         {
-            print(collidedObject.name);
-
             if (owner != collidedObject)
             {
+                ScoreManager scoreMgr = ScoreManager.Instance;
+
                 if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 1 && owner != null)
-                {
-                    ScoreManager scoreMgr = ScoreManager.Instance;
                     scoreMgr.IncrementPlayer02Score();
-                    scoreMgr.ResetScene(false);
-                }
                 else if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 2 && owner != null)
-                {
-                    ScoreManager scoreMgr = ScoreManager.Instance;
                     scoreMgr.IncrementPlayer01Score();
-                    scoreMgr.ResetScene(false);
-                }
+
+                scoreMgr.ResetScene(false);
             }
         }
     }
