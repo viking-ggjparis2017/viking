@@ -46,23 +46,16 @@ public class Ball : MonoBehaviour, IResetable {
     
     void OnCollisionEnter(Collision collision)
     {
-        ChangeOwner(collision);
-    }
+        var collidedObject = collision.gameObject;
 
-    void ChangeOwner(Collision collision)
-    {
-        if (collision.gameObject == Player01)
-        {
-            scoreMgr.IncrementPlayer01Score();
-            SetOwner(1);
-        }
-        else if (collision.gameObject == Player02)
-        {
-            scoreMgr.IncrementPlayer02Score();
-            SetOwner(2);
-        }
+        if (collidedObject.tag == "Player")
+            if (owner != collidedObject)
+                if( collidedObject.GetComponent<PlayerMouvement>().playerNumber == 1 )
+                    ScoreManager.Instance.IncrementPlayer02Score();
+                else if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 2)
+                    ScoreManager.Instance.IncrementPlayer01Score();
     }
-
+    
     public void SetOwner(int player)
     {
         owner = player == 1 ? Player01 : Player02;

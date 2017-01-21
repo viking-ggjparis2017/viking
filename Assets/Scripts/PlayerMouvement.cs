@@ -12,7 +12,7 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     float mouvementReduction = 10;
 
     [Range(1, 2), SerializeField]
-    int playerNumber = 1;
+    public int playerNumber = 1;
 
     string horizontalAxisName;
     string verticalAxisName;
@@ -38,8 +38,6 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     private void FixedUpdate()
     {
         Mouvement();
-
-
 
         var currentVelocity = rb.velocity;
         var oppositeForce = -currentVelocity * mouvementReduction;

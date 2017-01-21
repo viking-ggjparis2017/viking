@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
+    static private ScoreManager pInstance = null;
+    static public ScoreManager Instance { get { return pInstance; } }
+
     int Player_1_Score = 0;
     int Player_2_Score = 0;
 
@@ -18,6 +21,17 @@ public class ScoreManager : MonoBehaviour {
     GameObject finalScorePanel;
 
     bool AlreadyWon = false;
+
+    void Awake()
+    {
+        if (ScoreManager.Instance != null)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+
+        pInstance = this;
+    }
 
     void Start() {
         UpdatePlayerScore();
