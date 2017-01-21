@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23176770522987404}
   - component: {fileID: 54021107648969234}
   - component: {fileID: 114279402216911416}
+  - component: {fileID: 114522449907207166}
   m_Layer: 10
   m_Name: Ball
   m_TagString: Ball
@@ -89,7 +90,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374441590111750}
   serializedVersion: 2
-  m_Mass: 0.5
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -112,8 +113,21 @@ MonoBehaviour:
   Player02: {fileID: 0}
   Player01OwnerMat: {fileID: 0}
   Player02OwnerMat: {fileID: 0}
-  _critStatusMat: {fileID: 0}
-  defaultMaterial: {fileID: 0}
+  _critStatusMat: {fileID: 2100000, guid: 877feddcf6fe4de4faac7e80dffd49d9, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: fefe6fce8cb8c4f4196dfacd2cefee16, type: 2}
+--- !u!114 &114522449907207166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1374441590111750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc8bd9fb855e21428734b30ea81bac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _exitTimeout: 1
+  _selfTransform: {fileID: 4636072853026932}
 --- !u!135 &135031093652253840
 SphereCollider:
   m_ObjectHideFlags: 1
