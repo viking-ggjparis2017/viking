@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114972007649980850}
   - component: {fileID: 114517848363152816}
   - component: {fileID: 114639644931214458}
+  - component: {fileID: 114815562820539354}
   m_Layer: 8
   m_Name: SWPlayer
   m_TagString: Player
@@ -72,26 +73,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621497820661204}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4869388838228650}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4316789378074576
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1532597462951400}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.32, y: 0.3, z: 0.36}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 4869388838228650}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4869388838228650
 Transform:
   m_ObjectHideFlags: 1
@@ -234,6 +235,21 @@ MonoBehaviour:
   _ballScript: {fileID: 0}
   _tossRadius: 30
   playerNumber: 1
+--- !u!114 &114815562820539354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442869019865114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945c3cde3dd0fe841afea4da486a08e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _affectedItems:
+  - {fileID: 4316789378074576}
+  - {fileID: 4311897774461776}
+  _selfRigidBody: {fileID: 54529660315245224}
 --- !u!114 &114972007649980850
 MonoBehaviour:
   m_ObjectHideFlags: 1
