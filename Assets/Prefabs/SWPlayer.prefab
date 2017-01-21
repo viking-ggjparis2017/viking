@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4869388838228650}
   - component: {fileID: 33526813438259340}
-  - component: {fileID: 65673304189449910}
   - component: {fileID: 23316967568786068}
   - component: {fileID: 54529660315245224}
   - component: {fileID: 114972007649980850}
   - component: {fileID: 114517848363152816}
+  - component: {fileID: 136860388972759996}
   m_Layer: 0
   m_Name: SWPlayer
   m_TagString: Player
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442869019865114}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54529660315245224
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -98,18 +98,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 36
   m_CollisionDetection: 0
---- !u!65 &65673304189449910
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1442869019865114}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114517848363152816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,3 +125,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerRigidBody: {fileID: 54529660315245224}
   _shockwavePool: []
+  playerNumber: 1
+--- !u!136 &136860388972759996
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442869019865114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.49999997
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
