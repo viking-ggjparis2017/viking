@@ -39,6 +39,8 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     {
         Mouvement();
 
+
+
         var currentVelocity = rb.velocity;
         var oppositeForce = -currentVelocity * mouvementReduction;
         rb.AddRelativeForce(oppositeForce.x, oppositeForce.y, oppositeForce.z);

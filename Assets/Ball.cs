@@ -16,6 +16,8 @@ public class Ball : MonoBehaviour, IResetable {
     [SerializeField]
     ScoreManager scoreMgr;
 
+    private int _hits = 0;
+
     Renderer rd;
 
     //----- reset variable
@@ -56,7 +58,19 @@ public class Ball : MonoBehaviour, IResetable {
     {
         transform.position = resetPosition;
         transform.rotation = resetRotation;
-
         GetComponent<Rigidbody>().velocity.Set(0.0f, 0.0f, 0.0f);
+    }
+
+    /*
+     * When hit by a shwockwave.
+     */
+    public void Hit()
+    {
+        _hits++;
+    }
+
+    public int GetHits()
+    {
+        return _hits;
     }
 }
