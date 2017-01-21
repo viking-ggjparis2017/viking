@@ -34,17 +34,15 @@ public class Shockwave : MonoBehaviour {
 
     private bool _active = false;
     private float _currentLifeTime = 0f;
-    private float _critMultiplierDelta = 0f;
+    private int _owner = 0;
     private Vector3 _startScale = new Vector3(0f, 1f, 0f);
     private Vector3 _endScale = new Vector3(0f, 1f, 0f);
-    private int _playerNumber = 0;
 
     public void Start()
     {
         _selfObject.SetActive(false);
         _endScale.x = _maxRadius * 2;
         _endScale.z = _maxRadius * 2;
-        _critMultiplierDelta = 1 - (_critRadius / _maxRadius);
     }
 	
 	public void FixedUpdate() {
@@ -68,8 +66,9 @@ public class Shockwave : MonoBehaviour {
     {
         if (other.gameObject.tag == "Ball")
         {
-           AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position, other.GetComponent<Ball>());
-            other.GetComponent<Ball>().ChangeOwner(_playerNumber);
+            Ball ballScript = other.GetComponent<Ball>();
+            ballScript.SetOwner(_owner);
+            AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position, ballScript);
         }
     }
 
@@ -94,12 +93,11 @@ public class Shockwave : MonoBehaviour {
         body.AddForce(dir.normalized * _force * forceMultiplier);
     }
 
-    public void Drop(Vector3 dropPosition, int playerNumber)
+    public void Drop(Vector3 dropPosition)
     {
         _currentLifeTime = 0f;
         _selfTransform.position = dropPosition;
         _selfTransform.localScale = _startScale;
-        _playerNumber = playerNumber;
 
         _active = true;
         _selfObject.SetActive(true);
@@ -108,5 +106,10 @@ public class Shockwave : MonoBehaviour {
     public bool IsActive()
     {
         return _active;
+    }
+
+    public void SetOwner(int owner)
+    {
+        _owner = owner;
     }
 }

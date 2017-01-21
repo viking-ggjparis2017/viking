@@ -28,7 +28,8 @@ public class ShockwaveControls : MonoBehaviour {
 
             if(dropObject != null)
             {
-                dropObject.Drop(_playerRigidBody.position, playerNumber);
+                dropObject.SetOwner(playerNumber);
+                dropObject.Drop(_playerRigidBody.position);
             }
         }
 	}
