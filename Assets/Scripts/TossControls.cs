@@ -6,11 +6,8 @@ public class TossControls : MonoBehaviour {
 
     [SerializeField]
     private Rigidbody _selfBody = null;
-
-    [SerializeField]
+    
     private Rigidbody _ballBody = null;
-
-    [SerializeField]
     private Ball _ballScript = null;
 
     [SerializeField]
@@ -18,6 +15,13 @@ public class TossControls : MonoBehaviour {
 
     [Range(1, 2), SerializeField]
     private int playerNumber = 1;
+
+    void Start()
+    {
+        var ball = GameObject.FindGameObjectWithTag("Ball");
+        _selfBody = ball.GetComponent<Rigidbody>();
+        _ballScript = ball.GetComponent<Ball>();
+    }
 
     public void Update () {
 		if((playerNumber == 1 && Input.GetButtonDown("Stop_P1")) || (playerNumber == 2 && Input.GetButtonDown("Stop_P2")))

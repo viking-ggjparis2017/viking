@@ -21,6 +21,9 @@ public class Ball : MonoBehaviour, IResetable {
     [SerializeField]
     private Material _critStatusMat = null;
 
+    [SerializeField]
+    Material defaultMaterial = null;
+
     private int _hits = 0;
 
     private bool _isCrit = false;
@@ -49,11 +52,19 @@ public class Ball : MonoBehaviour, IResetable {
         var collidedObject = collision.gameObject;
 
         if (collidedObject.tag == "Player")
+        {
             if (owner != collidedObject)
-                if( collidedObject.GetComponent<PlayerMouvement>().playerNumber == 1 )
-                    ScoreManager.Instance.IncrementPlayer02Score();
-                else if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 2)
-                    ScoreManager.Instance.IncrementPlayer01Score();
+            {
+                ScoreManager scoreMgr = ScoreManager.Instance;
+
+                if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 1 && owner != null)
+                    scoreMgr.IncrementPlayer02Score();
+                else if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 2 && owner != null)
+                    scoreMgr.IncrementPlayer01Score();
+
+                scoreMgr.ResetScene(false);
+            }
+        }
     }
     
     public void SetOwner(int player)
@@ -64,6 +75,9 @@ public class Ball : MonoBehaviour, IResetable {
 
     public void Reset()
     {
+        owner = null;
+        rd.material = defaultMaterial;
+
         transform.position = resetPosition;
         transform.rotation = resetRotation;
 
