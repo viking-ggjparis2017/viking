@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallExit : MonoBehaviour {
-    private const float X_OFFSET = 100f;
-    private const float Y_OFFSET = 175f;
+    private const float X_OFFSET = 175f;
+    private const float Z_OFFSET = 100f;
 
     [SerializeField]
     private float _exitTimeout = 1f;
@@ -39,7 +39,7 @@ public class BallExit : MonoBehaviour {
     {
         return _selfTransform.position.x > BallExit.X_OFFSET ||
             _selfTransform.position.x < -BallExit.X_OFFSET ||
-            _selfTransform.position.y > BallExit.Y_OFFSET ||
-            _selfTransform.position.y > BallExit.Y_OFFSET;
+            _selfTransform.position.z > BallExit.Z_OFFSET ||
+            _selfTransform.position.z < -BallExit.Z_OFFSET;
     }
 }
