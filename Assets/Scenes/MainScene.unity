@@ -940,7 +940,7 @@ Prefab:
         type: 2}
       propertyPath: _ballScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 299884711}
     - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
         type: 2}
       propertyPath: _ballBody
@@ -1630,7 +1630,7 @@ Prefab:
         type: 2}
       propertyPath: _ballScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 299884711}
     - target: {fileID: 114972007649980850, guid: 6c6b72bee6cab174891889ff2baf88ad,
         type: 2}
       propertyPath: _shockwavePool.Array.data[0]

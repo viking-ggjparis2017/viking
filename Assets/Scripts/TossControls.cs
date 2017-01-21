@@ -5,9 +5,9 @@ using UnityEngine;
 public class TossControls : MonoBehaviour {
 
     [SerializeField]
-    private Rigidbody _selfBody = null;
-    
     private Rigidbody _ballBody = null;
+
+    [SerializeField]
     private Ball _ballScript = null;
 
     [SerializeField]
@@ -16,18 +16,9 @@ public class TossControls : MonoBehaviour {
     [Range(1, 2), SerializeField]
     private int playerNumber = 1;
 
-    void Start()
-    {
-        var ball = GameObject.FindGameObjectWithTag("Ball");
-        _selfBody = ball.GetComponent<Rigidbody>();
-        _ballScript = ball.GetComponent<Ball>();
-    }
-
     public void Update () {
 		if((playerNumber == 1 && Input.GetButtonDown("Stop_P1")) || (playerNumber == 2 && Input.GetButtonDown("Stop_P2")))
         {
-            Debug.Log("Toss " + playerNumber);
-
             if(IsBallInRange())
             {
                 Debug.Log("Toss ok " + playerNumber);
@@ -38,7 +29,6 @@ public class TossControls : MonoBehaviour {
 
     private bool IsBallInRange()
     {
-        Vector3 dir = _ballBody.transform.position - _selfBody.transform.position;
-        return dir.magnitude <= _tossRadius;
+        return Vector3.Distance(transform.position, _ballBody.transform.position) <= _tossRadius;
     }
 }
