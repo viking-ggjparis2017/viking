@@ -70,10 +70,10 @@ public class Shockwave : MonoBehaviour {
     {
         Vector3 dir = body.transform.position - expPosition;
         float calc = 1 - (dir.magnitude / expRadius);
-        /* if (calc <= 0) 
-         {
-             return;
-         }*/
+        if (calc <= 0) 
+        {
+            return;
+        }
 
         Debug.Log("Dir " + dir.ToString());
         Debug.Log("Magnitude " + dir.magnitude.ToString());
