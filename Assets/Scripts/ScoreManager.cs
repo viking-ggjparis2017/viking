@@ -58,8 +58,8 @@ public class ScoreManager : MonoBehaviour {
 
     void UpdatePlayerScore()
     {
-        Player01.text = "Player 01" + "\n" + "Score: " + Player_1_Score.ToString();
-        Player02.text = "Player 02" + "\n" + "Score: " + Player_2_Score.ToString();
+        Player01.text = "Player 01 Score: " + Player_1_Score.ToString();
+        Player02.text = "Player 02 Score: " + Player_2_Score.ToString();
     }
 
     void CheckVictory()
