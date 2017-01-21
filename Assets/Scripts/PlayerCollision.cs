@@ -21,7 +21,7 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ball"))
-            print("Player collide with ball");
+     //   if (collision.gameObject.CompareTag("Ball"))
+     //     print("Player collide with ball");
     }
 }

@@ -75,11 +75,11 @@ public class Shockwave : MonoBehaviour {
              return;
          }*/
 
-        Debug.Log("Dir " + dir.ToString());
+/*      Debug.Log("Dir " + dir.ToString());
         Debug.Log("Magnitude " + dir.magnitude.ToString());
         Debug.Log("Radius " + expRadius.ToString());
         Debug.Log("Force multiplier " + calc.ToString());
-
+*/
         body.AddForce(dir.normalized * expForce * calc);
     }
 
