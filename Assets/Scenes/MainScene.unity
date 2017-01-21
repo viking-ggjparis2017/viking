@@ -240,7 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617b075a55a35404995a4d79af8fed2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: {fileID: 0}
   Player01: {fileID: 760864769}
   Player02: {fileID: 1910893576}
   Player01OwnerMat: {fileID: 2100000, guid: f3acf67c654c711438e2b1b3314ca055, type: 2}

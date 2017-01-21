@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour {
-
-    [SerializeField]
+public class Ball : MonoBehaviour, IResetable {
+    
     GameObject owner = null;
 
     [SerializeField]
@@ -18,15 +18,18 @@ public class Ball : MonoBehaviour {
 
     Renderer rd;
 
-    // Use this for initialization
+    //----- reset variable
+    Vector3 resetPosition;
+    Quaternion resetRotation;
+
     void Start () {
         rd = GetComponent<Renderer>();
-	}
+
+        resetPosition = transform.position;
+        resetRotation = transform.rotation;
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update () {}
     
     void OnCollisionEnter(Collision collision)
     {
@@ -49,5 +52,11 @@ public class Ball : MonoBehaviour {
         }
     }
 
+    public void Reset()
+    {
+        transform.position = resetPosition;
+        transform.rotation = resetRotation;
 
+        GetComponent<Rigidbody>().velocity.Set(0.0f, 0.0f, 0.0f);
+    }
 }

@@ -23,7 +23,10 @@ public class ScoreManager : MonoBehaviour {
         UpdatePlayerScore();
     }
 
-    void Update() { }
+    void Update() {
+        if (Input.GetKeyDown("y"))
+            ResetScene(false);
+    }
 
     public void IncrementPlayer01Score()
     {
@@ -100,5 +103,19 @@ public class ScoreManager : MonoBehaviour {
 
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    void ResetScene(bool newGame)
+    {
+        foreach (var obj in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            obj.GetComponent<PlayerMouvement>().Reset();
+        }
+
+        foreach (var obj in GameObject.FindGameObjectsWithTag("Ball"))
+            obj.GetComponent<Ball>().Reset();
+
+        if (newGame)
+            AlreadyWon = false;
     }
 }
