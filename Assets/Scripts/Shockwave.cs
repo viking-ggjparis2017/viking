@@ -67,6 +67,10 @@ public class Shockwave : MonoBehaviour {
         if (other.gameObject.tag == "Ball")
         {
             Ball ballScript = other.GetComponent<Ball>();
+
+            if (!ballScript.HasOwner())
+                Physics.IgnoreLayerCollision(8, 10, false);
+
             ballScript.SetOwner(_owner);
             AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position, ballScript);
         }

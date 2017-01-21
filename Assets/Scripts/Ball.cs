@@ -70,6 +70,14 @@ public class Ball : MonoBehaviour, IResetable {
         rd.material = player == 1 ? Player01OwnerMat : Player02OwnerMat;
     }
 
+    public bool HasOwner()
+    {
+        if (owner != null)
+            return true;
+        else
+            return false;
+    }
+
     public void Reset()
     {
         owner = null;
