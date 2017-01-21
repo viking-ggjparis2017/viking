@@ -245,6 +245,7 @@ MonoBehaviour:
   Player02: {fileID: 1910893576}
   Player01OwnerMat: {fileID: 2100000, guid: f3acf67c654c711438e2b1b3314ca055, type: 2}
   Player02OwnerMat: {fileID: 2100000, guid: 213602f239226244a8635d0de6903f9a, type: 2}
+  scoreMgr: {fileID: 307692953}
 --- !u!1 &307692952
 GameObject:
   m_ObjectHideFlags: 0
