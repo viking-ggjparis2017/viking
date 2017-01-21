@@ -110,9 +110,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifetime: 0.25
   _maxRadius: 50
-  _force: 200
+  _force: 5
   _hitForceMultiplier: 0.3
   _critMultiplier: 1
+  _multiplierCap: 50
   _selfTransform: {fileID: 4849925562169260}
   _selfObject: {fileID: 1649008606283718}
   _selfRigidBody: {fileID: 54422981035979442}

@@ -21,6 +21,9 @@ public class Shockwave : MonoBehaviour {
     private float _critMultiplier = 1.5f;
 
     [SerializeField]
+    private float _multiplierCap = 50f;
+
+    [SerializeField]
     private Transform _selfTransform = null;
 
     [SerializeField]
@@ -88,6 +91,7 @@ public class Shockwave : MonoBehaviour {
 
         ballScript.Hit();
         forceMultiplier *= 1 + (_hitForceMultiplier * ballScript.GetHits());
+        forceMultiplier = Math.Min(forceMultiplier, _multiplierCap);
 
         body.AddForce(dir.normalized * _force * forceMultiplier);
     }
