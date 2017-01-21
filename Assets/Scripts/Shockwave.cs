@@ -34,7 +34,6 @@ public class Shockwave : MonoBehaviour {
 
     private bool _active = false;
     private float _currentLifeTime = 0f;
-    private float _critMultiplierDelta = 0f;
     private int _owner = 0;
     private Vector3 _startScale = new Vector3(0f, 1f, 0f);
     private Vector3 _endScale = new Vector3(0f, 1f, 0f);
@@ -44,7 +43,6 @@ public class Shockwave : MonoBehaviour {
         _selfObject.SetActive(false);
         _endScale.x = _maxRadius * 2;
         _endScale.z = _maxRadius * 2;
-        _critMultiplierDelta = 1 - (_critRadius / _maxRadius);
     }
 	
 	public void FixedUpdate() {

@@ -22,6 +22,8 @@ public class ShockwaveControls : MonoBehaviour {
     public void FixedUpdate () {
 	    if( Input.GetButtonDown(fireName) )
         {
+            print(fireName);
+
             Shockwave dropObject = FindShockwave();
 
             if(dropObject != null)

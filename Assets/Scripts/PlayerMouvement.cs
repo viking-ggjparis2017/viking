@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMouvement : MonoBehaviour {
+public class PlayerMouvement : MonoBehaviour, IResetable {
 
     [SerializeField]
     float mouvementSpeed = 20;
@@ -17,12 +18,19 @@ public class PlayerMouvement : MonoBehaviour {
     string verticalAxisName;
 
     Rigidbody rb;
+
+    //----- reset variable
+    Vector3 resetPosition;
+    Quaternion resetRotation;
     
 	void Start () {
         rb = GetComponent<Rigidbody>();
 
         horizontalAxisName = "Horizontal_P" + playerNumber.ToString(); 
         verticalAxisName = "Vertical_P" + playerNumber.ToString();
+
+        resetPosition = transform.position;
+        resetRotation = transform.rotation;
     }
 	
 	void Update () {}
@@ -31,6 +39,8 @@ public class PlayerMouvement : MonoBehaviour {
     {
         Mouvement();
 
+
+
         var currentVelocity = rb.velocity;
         var oppositeForce = -currentVelocity * mouvementReduction;
         rb.AddRelativeForce(oppositeForce.x, oppositeForce.y, oppositeForce.z);
@@ -38,8 +48,17 @@ public class PlayerMouvement : MonoBehaviour {
 
     void Mouvement()
     {
-        rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
+        rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, -Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
                     , ForceMode.VelocityChange);
+    }
 
+    public void Reset()
+    {
+        transform.position = resetPosition;
+        transform.rotation = resetRotation;
+
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        Input.ResetInputAxes();
     }
 }
