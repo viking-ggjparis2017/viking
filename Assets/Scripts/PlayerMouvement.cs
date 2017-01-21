@@ -41,7 +41,5 @@ public class PlayerMouvement : MonoBehaviour {
         rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
                     , ForceMode.VelocityChange);
 
-       // rb.AddForce(new Vector3(Input.GetAxis("Horizontal") * mouvementSpeed * Time.deltaTime, 0, Input.GetAxis("Vertical") * mouvementSpeed * Time.deltaTime)
-         //   , ForceMode.Force);
     }
 }
