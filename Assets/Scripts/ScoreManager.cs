@@ -119,7 +119,7 @@ public class ScoreManager : MonoBehaviour {
         }
     }
 
-    void ResetScene(bool newGame)
+    public void ResetScene(bool newGame)
     {
         foreach (var obj in GameObject.FindGameObjectsWithTag("Player"))
         {
