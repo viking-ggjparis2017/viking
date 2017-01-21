@@ -39,16 +39,20 @@ public class Ball : MonoBehaviour {
     {
         if (collision.gameObject == Player01)
         {
-            owner = Player01;
             scoreMgr.IncrementPlayer01Score();
-            rd.material = Player01OwnerMat;
+            SetOwner(1);
         }
         else if (collision.gameObject == Player02)
         {
-            owner = Player02;
             scoreMgr.IncrementPlayer02Score();
-            rd.material = Player02OwnerMat;
+            SetOwner(2);
         }
+    }
+
+    public void SetOwner(int player)
+    {
+        owner = player == 1 ? Player01 : Player02;
+        rd.material = player == 1 ? Player01OwnerMat : Player02OwnerMat;
     }
 
     /*
