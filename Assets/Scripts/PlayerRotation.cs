@@ -17,9 +17,7 @@ public class PlayerRotation : MonoBehaviour {
 	void FixedUpdate () {
         Vector3 movement = _selfRigidBody.velocity;
 
-        Debug.Log(movement);
-
-        if(Math.Abs(movement.x) == 0 && Math.Abs(movement.y) == 0)
+        if(movement == Vector3.zero)
         {
             return;
         }

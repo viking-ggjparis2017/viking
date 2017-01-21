@@ -70,8 +70,11 @@ public class Shockwave : MonoBehaviour {
             if (!ballScript.HasOwner())
                 Physics.IgnoreLayerCollision(8, 10, false);
 
-            ballScript.SetOwner(_owner);
-            AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position, ballScript);
+            if (ballScript.CanBeHit())
+            {
+                ballScript.SetOwner(_owner);
+                AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position, ballScript);
+            }
         }
     }
 
