@@ -769,6 +769,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68062cb098814a44e8039c04af395bac, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &609701747 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+    type: 2}
+  m_PrefabInternal: {fileID: 190668073}
+  m_Script: {fileID: 11500000, guid: c969c34849204e8448b443eb44f6fc98, type: 3}
 --- !u!1001 &612516803
 Prefab:
   m_ObjectHideFlags: 0
@@ -846,7 +852,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_LocalRotation.z
@@ -854,7 +860,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_RootOrder
@@ -920,7 +926,7 @@ Prefab:
         type: 2}
       propertyPath: _ballScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 609701747}
     - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
         type: 2}
       propertyPath: _ballBody
@@ -941,6 +947,10 @@ Prefab:
       propertyPath: _shockwavePool.Array.data[4]
       value: 
       objectReference: {fileID: 1737581961}
+    - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
@@ -1587,7 +1597,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_LocalRotation.z
@@ -1595,7 +1605,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
       propertyPath: m_RootOrder
@@ -1610,7 +1620,7 @@ Prefab:
         type: 2}
       propertyPath: _ballScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 609701747}
     - target: {fileID: 114972007649980850, guid: 6c6b72bee6cab174891889ff2baf88ad,
         type: 2}
       propertyPath: _shockwavePool.Array.data[0]
@@ -1644,6 +1654,10 @@ Prefab:
       propertyPath: _shockwavePool.Array.data[4]
       value: 
       objectReference: {fileID: 1737581961}
+    - target: {fileID: 4869388838228650, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
   m_IsPrefabParent: 0
