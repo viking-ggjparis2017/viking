@@ -114,6 +114,7 @@ MonoBehaviour:
   Player01OwnerMat: {fileID: 0}
   Player02OwnerMat: {fileID: 0}
   _critStatusMat: {fileID: 2100000, guid: 877feddcf6fe4de4faac7e80dffd49d9, type: 2}
+  _critBuildupMap: {fileID: 2100000, guid: 17e2ac5173a944941b15469397f9dfab, type: 2}
   defaultMaterial: {fileID: 2100000, guid: fefe6fce8cb8c4f4196dfacd2cefee16, type: 2}
 --- !u!114 &114522449907207166
 MonoBehaviour:

@@ -21,7 +21,6 @@ public class TossControls : MonoBehaviour {
         {
             if(IsBallInRange())
             {
-                Debug.Log("Toss ok " + playerNumber);
                 _ballScript.Toss(playerNumber);
             }
         }

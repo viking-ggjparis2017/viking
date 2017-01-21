@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour, IResetable {
 
-    private const float CRIT_TIMER = 0.5f;
+    private const float CRIT_TIMER = 0.3f;
+    private const float CRIT_BUILDUP = 0.2f;
 
     GameObject owner = null;
 
@@ -19,11 +20,15 @@ public class Ball : MonoBehaviour, IResetable {
     private Material _critStatusMat = null;
 
     [SerializeField]
+    private Material _critBuildupMap = null;
+
+    [SerializeField]
     Material defaultMaterial = null;
 
     private int _hits = 0;
 
     private bool _isCrit = false;
+    private bool _isCritBuildup = false;
     private float _critTimer = 0f;
 
     Renderer rd;
@@ -41,7 +46,6 @@ public class Ball : MonoBehaviour, IResetable {
 	
 	void Update () {
         CritUpdate();
-
     }
     
     void OnCollisionEnter(Collision collision)
@@ -82,6 +86,8 @@ public class Ball : MonoBehaviour, IResetable {
     {
         owner = null;
         rd.material = defaultMaterial;
+        _isCritBuildup = false;
+        _isCrit = false;
 
         transform.position = resetPosition;
         transform.rotation = resetRotation;
@@ -119,27 +125,42 @@ public class Ball : MonoBehaviour, IResetable {
         return _isCrit;
     }
 
+    public bool CanBeHit()
+    {
+        return !_isCritBuildup;
+    }
+
     public void CritUpdate()
     {
-        if (!_isCrit)
+        if (!_isCrit && !_isCritBuildup)
         {
             return;
         }
 
+        _critTimer += Time.deltaTime;
 
-        if (_critTimer >= Ball.CRIT_TIMER)
+        if (_isCritBuildup && _critTimer >= Ball.CRIT_BUILDUP)
         {
-            EndCrit();
+            _isCritBuildup = false;
+            _isCrit = true;
+            _critTimer = 0f;
+            rd.material = _critStatusMat;
+            Debug.Log("buildup done");
+            return;
         }
 
-        _critTimer += Time.deltaTime;
+        if (_isCrit && _critTimer >= Ball.CRIT_TIMER)
+        {
+            Debug.Log("Crit done");
+            EndCrit();
+        }
     }
 
     public void StartCrit()
     {
-        _isCrit = true;
+        _isCritBuildup = true;
         _critTimer = 0f;
-        rd.material = _critStatusMat;
+        rd.material = _critBuildupMap;
     }
 
     public void EndCrit()
