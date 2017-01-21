@@ -10,9 +10,17 @@ public class ShockwaveControls : MonoBehaviour {
     [SerializeField]
     private Shockwave[] _shockwavePool = null;
 
-	// Update is called once per frame
-	public void FixedUpdate () {
-	    if(Input.GetKeyDown("space"))
+    [Range(1, 2), SerializeField]
+    int playerNumber = 1;
+    string fireName;
+
+    void Start()
+    {
+        fireName = "Fire_P" + playerNumber.ToString();
+    }
+
+    public void FixedUpdate () {
+	    if( Input.GetButtonDown(fireName) )
         {
             Shockwave dropObject = FindShockwave();
 
