@@ -30,6 +30,9 @@ public class Ball : MonoBehaviour, IResetable {
     private float _critTimer = 0f;
 
     Renderer rd;
+    [SerializeField]
+    public float parallaxBallPosition;
+
 
     //----- reset variable
     Vector3 resetPosition;
@@ -45,6 +48,7 @@ public class Ball : MonoBehaviour, IResetable {
 	void Update () {
         CritUpdate();
 
+        parallaxBallPosition = transform.position.x / 105.0f;
     }
     
     void OnCollisionEnter(Collision collision)
