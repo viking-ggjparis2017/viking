@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114972007649980850}
   - component: {fileID: 114517848363152816}
   - component: {fileID: 136860388972759996}
+  - component: {fileID: 114639644931214458}
   m_Layer: 0
   m_Name: SWPlayer
   m_TagString: Player
@@ -111,6 +112,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouvementSpeed: 2000
   mouvementReduction: -10
+  playerNumber: 1
+--- !u!114 &114639644931214458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442869019865114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0ad2342326ead4794ba035855b3ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selfBody: {fileID: 54529660315245224}
+  _ballBody: {fileID: 0}
+  _ballScript: {fileID: 0}
+  _tossRadius: 15
+  _critStatusMat: {fileID: 2100000, guid: 877feddcf6fe4de4faac7e80dffd49d9, type: 2}
   playerNumber: 1
 --- !u!114 &114972007649980850
 MonoBehaviour:

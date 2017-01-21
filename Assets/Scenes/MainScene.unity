@@ -229,6 +229,17 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &190668074 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+    type: 2}
+  m_PrefabInternal: {fileID: 190668073}
+  m_Script: {fileID: 11500000, guid: 617b075a55a35404995a4d79af8fed2f, type: 3}
+--- !u!54 &190668075 stripped
+Rigidbody:
+  m_PrefabParentObject: {fileID: 54021107648969234, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+    type: 2}
+  m_PrefabInternal: {fileID: 190668073}
 --- !u!1 &222998360
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +293,7 @@ MonoBehaviour:
   Player01OwnerMat: {fileID: 2100000, guid: f3acf67c654c711438e2b1b3314ca055, type: 2}
   Player02OwnerMat: {fileID: 2100000, guid: 213602f239226244a8635d0de6903f9a, type: 2}
   scoreMgr: {fileID: 307692953}
+  _critStatusMat: {fileID: 2100000, guid: 877feddcf6fe4de4faac7e80dffd49d9, type: 2}
 --- !u!1 &307692952
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +893,16 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballScript
+      value: 
+      objectReference: {fileID: 190668074}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballBody
+      value: 
+      objectReference: {fileID: 190668075}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
   m_IsPrefabParent: 0
