@@ -903,6 +903,11 @@ Prefab:
       propertyPath: _ballBody
       value: 
       objectReference: {fileID: 190668075}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
   m_IsPrefabParent: 0
@@ -1732,6 +1737,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballBody
+      value: 
+      objectReference: {fileID: 190668075}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballScript
+      value: 
+      objectReference: {fileID: 190668074}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
   m_IsPrefabParent: 0
