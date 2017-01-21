@@ -37,6 +37,7 @@ public class Shockwave : MonoBehaviour {
     private float _critMultiplierDelta = 0f;
     private Vector3 _startScale = new Vector3(0f, 1f, 0f);
     private Vector3 _endScale = new Vector3(0f, 1f, 0f);
+    private int _playerNumber = 0;
 
     public void Start()
     {
@@ -68,6 +69,7 @@ public class Shockwave : MonoBehaviour {
         if (other.gameObject.tag == "Ball")
         {
            AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position, other.GetComponent<Ball>());
+            other.GetComponent<Ball>().ChangeOwner(_playerNumber);
         }
     }
 
@@ -92,11 +94,12 @@ public class Shockwave : MonoBehaviour {
         body.AddForce(dir.normalized * _force * forceMultiplier);
     }
 
-    public void Drop(Vector3 dropPosition)
+    public void Drop(Vector3 dropPosition, int playerNumber)
     {
         _currentLifeTime = 0f;
         _selfTransform.position = dropPosition;
         _selfTransform.localScale = _startScale;
+        _playerNumber = playerNumber;
 
         _active = true;
         _selfObject.SetActive(true);

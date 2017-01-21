@@ -35,18 +35,20 @@ public class Ball : MonoBehaviour, IResetable {
     
     void OnCollisionEnter(Collision collision)
     {
-        ChangeOwner(collision);
+    //    ChangeOwner(collision);
     }
 
-    void ChangeOwner(Collision collision)
+    public void ChangeOwner(int playerNumber)
     {
-        if (collision.gameObject == Player01)
+        print("pN : " + playerNumber);
+
+        if (playerNumber == 1)
         {
             owner = Player01;
             scoreMgr.IncrementPlayer01Score();
             rd.material = Player01OwnerMat;
         }
-        else if (collision.gameObject == Player02)
+        else if (playerNumber == 2)
         {
             owner = Player02;
             scoreMgr.IncrementPlayer02Score();
