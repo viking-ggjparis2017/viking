@@ -47,7 +47,6 @@ public class ScoreManager : MonoBehaviour {
 
     void CheckVictory()
     {
-
         if (!AlreadyWon)
         {
             if (Player_1_Score == neededScore)
@@ -63,8 +62,8 @@ public class ScoreManager : MonoBehaviour {
 
     void ShowScoreCanvas(int playerWhoWon)
     {
-        print(playerWhoWon);
-        
+        AlreadyWon = true;
+
         StartCoroutine(Scale());
 
         Player01.gameObject.SetActive(false);
@@ -77,6 +76,13 @@ public class ScoreManager : MonoBehaviour {
             playerVictory.text = "Player 01" + "\n" + "Victory !";
         else if(playerWhoWon == 2)
             playerVictory.text = "Player 02" + "\n" + "Victory !";
+
+        Player01.gameObject.SetActive(false);
+        Player02.gameObject.SetActive(false);
+
+        finalScorePanel.transform.FindChild("Final_Score_P1").GetComponent<Text>().text = "Player 01" + "\n" + "Score: " + Player_1_Score.ToString();
+        finalScorePanel.transform.FindChild("Final_Score_P2").GetComponent<Text>().text = "Player 02" + "\n" + "Score: " + Player_2_Score.ToString();
+
     }
     
     IEnumerator Scale()
@@ -94,8 +100,5 @@ public class ScoreManager : MonoBehaviour {
 
             yield return new WaitForSeconds(0.5f);
         }
-
-        //yield return new WaitForSeconds(waitTime);
-
     }
 }
