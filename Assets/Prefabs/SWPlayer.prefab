@@ -230,10 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0ad2342326ead4794ba035855b3ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selfBody: {fileID: 54529660315245224}
   _ballBody: {fileID: 0}
   _ballScript: {fileID: 0}
-  _tossRadius: 15
+  _tossRadius: 30
   playerNumber: 1
 --- !u!114 &114972007649980850
 MonoBehaviour:
@@ -251,6 +250,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _movementScript: {fileID: 114517848363152816}
   playerNumber: 1
 --- !u!136 &136860388972759996
 CapsuleCollider:

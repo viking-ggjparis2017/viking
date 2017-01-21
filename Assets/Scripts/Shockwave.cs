@@ -80,7 +80,7 @@ public class Shockwave : MonoBehaviour {
             return;
         }
 
-        if(ballScript.IsCritActive(_owner))
+        if(ballScript.IsCritActive())
         {
             Debug.Log("CRIT!");
             forceMultiplier += _critMultiplier;

@@ -107,9 +107,9 @@ public class Ball : MonoBehaviour, IResetable {
         StartCrit();
     }
 
-    public bool IsCritActive(int player)
+    public bool IsCritActive()
     {
-        return _isCrit && ((player == 1 && owner == Player01) || (player == 2 && owner == Player02));
+        return _isCrit;
     }
 
     public void CritUpdate()
