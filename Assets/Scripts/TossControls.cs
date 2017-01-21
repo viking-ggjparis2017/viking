@@ -19,7 +19,7 @@ public class TossControls : MonoBehaviour {
     public void Update () {
 		if((playerNumber == 1 && Input.GetButtonDown("Stop_P1")) || (playerNumber == 2 && Input.GetButtonDown("Stop_P2")))
         {
-            if(IsBallInRange())
+            if(IsBallInRange() && _ballScript.HasOwner())
             {
                 _ballScript.Toss(playerNumber);
             }
