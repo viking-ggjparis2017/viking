@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ public class Shockwave : MonoBehaviour {
 
     [SerializeField]
     private float _force = 100f;
+
+    [SerializeField]
+    private float _hitForceMultiplier = 0.1f;
 
     [SerializeField]
     private float _critRadius = 1f;
@@ -28,9 +32,11 @@ public class Shockwave : MonoBehaviour {
     [SerializeField]
     private Rigidbody _selfRigidBody = null;
 
-    private bool _active = false;
+    private static int _hits = 0;
 
+    private bool _active = false;
     private float _currentLifeTime = 0f;
+    private float _critMultiplierDelta = 0f;
     private Vector3 _startScale = new Vector3(0f, 1f, 0f);
     private Vector3 _endScale = new Vector3(0f, 1f, 0f);
 
@@ -39,6 +45,7 @@ public class Shockwave : MonoBehaviour {
         _selfObject.SetActive(false);
         _endScale.x = _maxRadius * 2;
         _endScale.z = _maxRadius * 2;
+        _critMultiplierDelta = 1 - (_critRadius / _maxRadius);
     }
 	
 	public void FixedUpdate() {
@@ -62,25 +69,36 @@ public class Shockwave : MonoBehaviour {
     {
         if (other.gameObject.tag == "Ball")
         {
-           AddExplosionForce(other.GetComponent<Rigidbody>(), _force, _selfRigidBody.position, _maxRadius);
+            _hits++;
+           AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position);
         }
     }
 
-    public static void AddExplosionForce(Rigidbody body, float expForce, Vector3 expPosition, float expRadius)
+    public void AddExplosionForce(Rigidbody body, Vector3 expPosition)
     {
         Vector3 dir = body.transform.position - expPosition;
-        float calc = 1 - (dir.magnitude / expRadius);
-        if (calc <= 0) 
+        float magnitude = dir.magnitude;
+
+        float forceMultiplier = 1 - (magnitude/ _maxRadius);
+        if (forceMultiplier <= 0) 
         {
             return;
         }
 
-/*      Debug.Log("Dir " + dir.ToString());
+        if(magnitude < _critRadius)
+        {
+            Debug.Log("CRIT !!!");
+            _force *= _critMultiplier;
+            forceMultiplier = 1;
+        }
+
+        forceMultiplier *= 1 + (_hitForceMultiplier * _hits);
+
+        Debug.Log("Dir " + dir.ToString());
         Debug.Log("Magnitude " + dir.magnitude.ToString());
-        Debug.Log("Radius " + expRadius.ToString());
-        Debug.Log("Force multiplier " + calc.ToString());
-*/
-        body.AddForce(dir.normalized * expForce * calc);
+        Debug.Log("Force multiplier " + forceMultiplier.ToString());
+
+        body.AddForce(dir.normalized * _force * forceMultiplier);
     }
 
     public void Drop(Vector3 dropPosition)
