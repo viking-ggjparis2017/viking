@@ -111,7 +111,7 @@ MonoBehaviour:
   _lifetime: 0.5
   _maxRadius: 30
   _force: 100
-  _hitForceMultiplier: 10
+  _hitForceMultiplier: 0.3
   _critRadius: 15
   _critMultiplier: 1.5
   _selfTransform: {fileID: 4849925562169260}
