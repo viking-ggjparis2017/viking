@@ -18,9 +18,6 @@ public class Shockwave : MonoBehaviour {
     private float _hitForceMultiplier = 0.3f;
 
     [SerializeField]
-    private float _critRadius = 1f;
-
-    [SerializeField]
     private float _critMultiplier = 1.5f;
 
     [SerializeField]
@@ -83,12 +80,14 @@ public class Shockwave : MonoBehaviour {
             return;
         }
 
+        if(ballScript.IsCritActive(_owner))
+        {
+            Debug.Log("CRIT!");
+            forceMultiplier += _critMultiplier;
+        }
+
         ballScript.Hit();
         forceMultiplier *= 1 + (_hitForceMultiplier * ballScript.GetHits());
-
-        Debug.Log("Dir " + dir.ToString());
-        Debug.Log("Magnitude " + dir.magnitude.ToString());
-        Debug.Log("Force multiplier " + forceMultiplier.ToString());
 
         body.AddForce(dir.normalized * _force * forceMultiplier);
     }

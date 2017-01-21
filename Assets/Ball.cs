@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour, IResetable {
-    
+
+    private const float CRIT_TIMER = 0.5f;
+
     GameObject owner = null;
 
     [SerializeField]
@@ -16,7 +18,13 @@ public class Ball : MonoBehaviour, IResetable {
     [SerializeField]
     ScoreManager scoreMgr;
 
+    [SerializeField]
+    private Material _critStatusMat = null;
+
     private int _hits = 0;
+
+    private bool _isCrit = false;
+    private float _critTimer = 0f;
 
     Renderer rd;
 
@@ -31,7 +39,10 @@ public class Ball : MonoBehaviour, IResetable {
         resetRotation = transform.rotation;
     }
 	
-	void Update () {}
+	void Update () {
+        CritUpdate();
+
+    }
     
     void OnCollisionEnter(Collision collision)
     {
@@ -78,5 +89,49 @@ public class Ball : MonoBehaviour, IResetable {
     public int GetHits()
     {
         return _hits;
+    }
+
+    public void Toss(int player)
+    {
+        SetOwner(player);
+
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        StartCrit();
+    }
+
+    public bool IsCritActive(int player)
+    {
+        return _isCrit && ((player == 1 && owner == Player01) || (player == 2 && owner == Player02));
+    }
+
+    public void CritUpdate()
+    {
+        if (!_isCrit)
+        {
+            return;
+        }
+
+
+        if (_critTimer >= Ball.CRIT_TIMER)
+        {
+            EndCrit();
+        }
+
+        _critTimer += Time.deltaTime;
+    }
+
+    public void StartCrit()
+    {
+        _isCrit = true;
+        _critTimer = 0f;
+        rd.material = _critStatusMat;
+    }
+
+    public void EndCrit()
+    {
+        _isCrit = false;
+        _critTimer = 0f;
+        rd.material = owner == Player01 ? Player01OwnerMat : Player02OwnerMat;
     }
 }

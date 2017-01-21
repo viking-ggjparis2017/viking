@@ -174,7 +174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4636072853026932, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4636072853026932, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -200,56 +200,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 4636072853026932, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636072853026932, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636072853026932, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1374441590111750, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 135031093652253840, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+    - target: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54021107648969234, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+      propertyPath: Player01
+      value: 
+      objectReference: {fileID: 760864769}
+    - target: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
         type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: Player02
+      value: 
+      objectReference: {fileID: 1910893576}
+    - target: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+        type: 2}
+      propertyPath: scoreMgr
+      value: 
+      objectReference: {fileID: 307692953}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &299884710 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1374441590111750, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+--- !u!114 &299884711 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
     type: 2}
   m_PrefabInternal: {fileID: 190668073}
---- !u!114 &299884711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 299884710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 617b075a55a35404995a4d79af8fed2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player01: {fileID: 760864769}
-  Player02: {fileID: 1910893576}
-  Player01OwnerMat: {fileID: 2100000, guid: f3acf67c654c711438e2b1b3314ca055, type: 2}
-  Player02OwnerMat: {fileID: 2100000, guid: 213602f239226244a8635d0de6903f9a, type: 2}
-  scoreMgr: {fileID: 307692953}
+--- !u!54 &299884712 stripped
+Rigidbody:
+  m_PrefabParentObject: {fileID: 54021107648969234, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+    type: 2}
+  m_PrefabInternal: {fileID: 190668073}
 --- !u!1 &307692952
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +673,21 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: playerNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballScript
+      value: 
+      objectReference: {fileID: 299884711}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballBody
+      value: 
+      objectReference: {fileID: 299884712}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
   m_IsPrefabParent: 0
@@ -1279,6 +1273,16 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballScript
+      value: 
+      objectReference: {fileID: 299884711}
+    - target: {fileID: 114639644931214458, guid: 6c6b72bee6cab174891889ff2baf88ad,
+        type: 2}
+      propertyPath: _ballBody
+      value: 
+      objectReference: {fileID: 299884712}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
   m_IsPrefabParent: 0
