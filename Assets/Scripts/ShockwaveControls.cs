@@ -11,19 +11,21 @@ public class ShockwaveControls : MonoBehaviour {
     private Shockwave[] _shockwavePool = null;
 
     [Range(1, 2), SerializeField]
-    int playerNumber = 1;
-    string fireName;
-
-    void Start()
-    {
-        fireName = "Fire_P" + playerNumber.ToString();
-    }
+    private int playerNumber = 1;
 
     public void FixedUpdate () {
-	    if( Input.GetButtonDown(fireName) )
+        if(Input.GetButtonDown("Fire_P1"))
         {
-            print(fireName);
+            Debug.Log("P1");
+        }
 
+        if(Input.GetButtonDown("Fire_P2"))
+        {
+            Debug.Log("P2");
+        }
+
+	    if( (playerNumber == 1 && Input.GetButtonDown("Fire_P1")) || (playerNumber == 2 && Input.GetButtonDown("Fire_P2")) )
+        {
             Shockwave dropObject = FindShockwave();
 
             if(dropObject != null)
