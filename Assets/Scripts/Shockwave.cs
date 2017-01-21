@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shockwave : MonoBehaviour {
 
     [SerializeField]
-    private float _lifetime = 1f;
+    private float _lifetime = 0.4f;
 
     [SerializeField]
     private float _maxRadius = 10f;
@@ -37,8 +37,8 @@ public class Shockwave : MonoBehaviour {
     public void Start()
     {
         _selfObject.SetActive(false);
-        _endScale.x = _maxRadius;
-        _endScale.z = _maxRadius;
+        _endScale.x = _maxRadius * 2;
+        _endScale.z = _maxRadius * 2;
     }
 	
 	public void FixedUpdate() {
@@ -62,8 +62,25 @@ public class Shockwave : MonoBehaviour {
     {
         if (other.gameObject.tag == "Ball")
         {
-            other.GetComponent<Rigidbody>().AddExplosionForce(_force, _selfRigidBody.position, _maxRadius);
+           AddExplosionForce(other.GetComponent<Rigidbody>(), _force, _selfRigidBody.position, _maxRadius);
         }
+    }
+
+    public static void AddExplosionForce(Rigidbody body, float expForce, Vector3 expPosition, float expRadius)
+    {
+        Vector3 dir = body.transform.position - expPosition;
+        float calc = 1 - (dir.magnitude / expRadius);
+        /* if (calc <= 0) 
+         {
+             return;
+         }*/
+
+        Debug.Log("Dir " + dir.ToString());
+        Debug.Log("Magnitude " + dir.magnitude.ToString());
+        Debug.Log("Radius " + expRadius.ToString());
+        Debug.Log("Force multiplier " + calc.ToString());
+
+        body.AddForce(dir.normalized * expForce * calc);
     }
 
     public void Drop(Vector3 dropPosition)
