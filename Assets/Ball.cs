@@ -16,6 +16,8 @@ public class Ball : MonoBehaviour {
     [SerializeField]
     ScoreManager scoreMgr;
 
+    private int _hits = 0;
+
     Renderer rd;
 
     // Use this for initialization
@@ -49,5 +51,16 @@ public class Ball : MonoBehaviour {
         }
     }
 
+    /*
+     * When hit by a shwockwave.
+     */
+    public void Hit()
+    {
+        _hits++;
+    }
 
+    public int GetHits()
+    {
+        return _hits;
+    }
 }

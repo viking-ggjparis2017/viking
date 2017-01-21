@@ -15,7 +15,7 @@ public class Shockwave : MonoBehaviour {
     private float _force = 100f;
 
     [SerializeField]
-    private float _hitForceMultiplier = 0.1f;
+    private float _hitForceMultiplier = 0.3f;
 
     [SerializeField]
     private float _critRadius = 1f;
@@ -31,8 +31,6 @@ public class Shockwave : MonoBehaviour {
 
     [SerializeField]
     private Rigidbody _selfRigidBody = null;
-
-    private static int _hits = 0;
 
     private bool _active = false;
     private float _currentLifeTime = 0f;
@@ -69,12 +67,11 @@ public class Shockwave : MonoBehaviour {
     {
         if (other.gameObject.tag == "Ball")
         {
-            _hits++;
-           AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position);
+           AddExplosionForce(other.GetComponent<Rigidbody>(), _selfRigidBody.position, other.GetComponent<Ball>());
         }
     }
 
-    public void AddExplosionForce(Rigidbody body, Vector3 expPosition)
+    public void AddExplosionForce(Rigidbody body, Vector3 expPosition, Ball ballScript)
     {
         Vector3 dir = body.transform.position - expPosition;
         float magnitude = dir.magnitude;
@@ -85,14 +82,8 @@ public class Shockwave : MonoBehaviour {
             return;
         }
 
-        if(magnitude < _critRadius)
-        {
-            Debug.Log("CRIT !!!");
-            _force *= _critMultiplier;
-            forceMultiplier = 1;
-        }
-
-        forceMultiplier *= 1 + (_hitForceMultiplier * _hits);
+        ballScript.Hit();
+        forceMultiplier *= 1 + (_hitForceMultiplier * ballScript.GetHits());
 
         Debug.Log("Dir " + dir.ToString());
         Debug.Log("Magnitude " + dir.magnitude.ToString());
