@@ -19,8 +19,8 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     string verticalAxisName;
 
     Rigidbody rb;
-
-    Animator _animator;
+    
+    public Animator _animator;
 
     //----- reset variable
     Vector3 resetPosition;
@@ -39,7 +39,7 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
         resetPosition = transform.position;
         resetRotation = transform.rotation;
 
-        _animator = GetComponentInParent<Animator>();
+       // _animator = GetComponentInParent<Animator>();
 
     }
 	
@@ -73,15 +73,8 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
         rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, -Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
                     , ForceMode.VelocityChange);
 
-        //        print("horizontalAxisName : " + Input.GetAxis(horizontalAxisName));
-        //        print("verticalAxisName : " + Input.GetAxis(verticalAxisName));
-
-        _animator.GetBool("Test");
-
-        //_animator.GetFloat("X_Axis_Mouvement");
-
-//        _animator.SetFloat("X_Axis_Mouvement", 1);
-   //     _animator.SetFloat("Y_Axis_Mouvement", Input.GetAxis(verticalAxisName));
+          _animator.SetFloat("X_Axis_Mouvement",  Mathf.Abs(Input.GetAxis(horizontalAxisName)));
+          _animator.SetFloat("Y_Axis_Mouvement", Mathf.Abs(Input.GetAxis(verticalAxisName)));
 
     }
 

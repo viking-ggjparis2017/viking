@@ -133,6 +133,40 @@ Prefab:
     - target: {fileID: 95161939520988728, guid: b93b7bda34ec9e0469891f9fafdee875,
         type: 2}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114328509331711122, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1467805390}
+    - target: {fileID: 114066035834676802, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: _ballScript
+      value: 
+      objectReference: {fileID: 609701747}
+    - target: {fileID: 114066035834676802, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: _ballBody
+      value: 
+      objectReference: {fileID: 190668075}
+    - target: {fileID: 95161939520988728, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847452324032552, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997226225857474, guid: b93b7bda34ec9e0469891f9fafdee875, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212740861910946336, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: m_FlipY
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -513,6 +547,7 @@ GameObject:
   - component: {fileID: 313901208}
   - component: {fileID: 313901207}
   - component: {fileID: 313901206}
+  - component: {fileID: 313901211}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -588,6 +623,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &313901211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 313901205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3790641156199cc4982561c8077c396b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ratio: 1
 --- !u!1 &400237935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1601,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1442869019865114, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 6c6b72bee6cab174891889ff2baf88ad, type: 2}
@@ -1668,7 +1719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80528f96e25f8894cafd6709da11be2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ratio: 1000
+  _ratio: -1000
 --- !u!1 &1239330517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,6 +2205,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &1467805390 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95161939520988728, guid: b93b7bda34ec9e0469891f9fafdee875,
+    type: 2}
+  m_PrefabInternal: {fileID: 52019513}
 --- !u!1 &1624611483
 GameObject:
   m_ObjectHideFlags: 0
