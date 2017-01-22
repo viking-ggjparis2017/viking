@@ -35,7 +35,6 @@ public class TossControls : MonoBehaviour {
             CritRange RangeItem = GetInactiveRange();
             if (RangeItem != null)
             {
-                Debug.Log("crit range found");
                 RangeItem.Place(transform.position);
             }
 
