@@ -26,11 +26,20 @@ public class PlayerRotation : MonoBehaviour {
 
         foreach (Transform target in _affectedItems)
         {
-            print("target.rotation : " + target.rotation);
-            print("movement * -1f : " + movement * -1f);
+         //   var rot = new Vector3(0, 0, 0);
+         //   transform.rotation.eulerAngles = rot;
 
-            _startVector = target.rotation;
-            _endVector = Quaternion.LookRotation(movement * -1f);
+//            print("target.rotation : " + target.rotation);
+//            print("movement * -1f : " + movement * -1f);
+
+//            _startVector = target.eulerAngles.x;
+//            _endVector = Quaternion.LookRotation(movement * -1f);
+
+            float tiltAroundZ = target.eulerAngles.z;
+            float tiltAroundX = target.eulerAngles.x;
+            Quaternion targeta = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+            transform.rotation = Quaternion.Slerp(targeta, Quaternion.LookRotation(movement * -1f), Time.fixedDeltaTime * _rotationSpeed);
+
 
             //Quaternion yourRotationQuaternion = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed);
 
@@ -38,7 +47,10 @@ public class PlayerRotation : MonoBehaviour {
 
             //target.rotation = yourRotationQuaternion;
 
-            target.rotation = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed);
+            //   target.rotation = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed)
+
+            //            transform.Rotate(Vector3.Slerp(_startVector.eulerAngles, _endVector.eulerAngles, Time.fixedDeltaTime * _rotationSpeed));
+
         }
     }
 }

@@ -19,12 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4636072853026932}
-  - component: {fileID: 33082174724790622}
   - component: {fileID: 135031093652253840}
-  - component: {fileID: 23176770522987404}
   - component: {fileID: 54021107648969234}
   - component: {fileID: 114279402216911416}
   - component: {fileID: 114522449907207166}
+  - component: {fileID: 23978231572838116}
+  - component: {fileID: 33877567189433304}
   m_Layer: 10
   m_Name: Ball
   m_TagString: Ball
@@ -38,14 +38,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374441590111750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23176770522987404
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!23 &23978231572838116
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fefe6fce8cb8c4f4196dfacd2cefee16, type: 2}
+  - {fileID: 2100000, guid: f3acf67c654c711438e2b1b3314ca055, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
@@ -76,13 +76,13 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33082174724790622
+--- !u!33 &33877567189433304
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374441590111750}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54021107648969234
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player01: {fileID: 0}
   Player02: {fileID: 0}
-  Player01OwnerMat: {fileID: 0}
-  Player02OwnerMat: {fileID: 0}
+  Player01OwnerMat: {fileID: 2100000, guid: f3acf67c654c711438e2b1b3314ca055, type: 2}
+  Player02OwnerMat: {fileID: 2100000, guid: 213602f239226244a8635d0de6903f9a, type: 2}
   _critStatusMat: {fileID: 2100000, guid: 877feddcf6fe4de4faac7e80dffd49d9, type: 2}
   _critBuildupMap: {fileID: 2100000, guid: 17e2ac5173a944941b15469397f9dfab, type: 2}
   defaultMaterial: {fileID: 2100000, guid: fefe6fce8cb8c4f4196dfacd2cefee16, type: 2}
@@ -139,5 +139,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}

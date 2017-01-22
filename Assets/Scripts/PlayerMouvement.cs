@@ -30,7 +30,8 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     private float _noControlLimit = 0f;
     
 	void Start () {
-        rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
+        rb = GetComponentInParent<Rigidbody>();
 
         horizontalAxisName = "Horizontal_P" + playerNumber.ToString(); 
         verticalAxisName = "Vertical_P" + playerNumber.ToString();
@@ -38,7 +39,7 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
         resetPosition = transform.position;
         resetRotation = transform.rotation;
 
-       // _animator = GetComponentInParent<Animator>();
+       _animator = GetComponent<Animator>();
 
     }
 	
@@ -71,8 +72,6 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
 
         rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, -Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
                     , ForceMode.VelocityChange);
-
-        print("vel : " + rb.velocity);
 
           _animator.SetFloat("X_Axis_Mouvement",  Mathf.Abs(Input.GetAxis(horizontalAxisName)));
           _animator.SetFloat("Y_Axis_Mouvement", Mathf.Abs(Input.GetAxis(verticalAxisName)));
