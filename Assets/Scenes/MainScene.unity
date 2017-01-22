@@ -322,6 +322,16 @@ Prefab:
       propertyPath: defaultMaterial
       value: 
       objectReference: {fileID: 2100000, guid: f3acf67c654c711438e2b1b3314ca055, type: 2}
+    - target: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+        type: 2}
+      propertyPath: _critStatusMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 702d8204a64fde24285312603554e6f2, type: 2}
+    - target: {fileID: 114279402216911416, guid: 650d4907e37c38046bb7e2aef7cdcaa0,
+        type: 2}
+      propertyPath: _critBuildupMap
+      value: 
+      objectReference: {fileID: 2100000, guid: cb6e38aa9490297418f857ab6c21b50d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 650d4907e37c38046bb7e2aef7cdcaa0, type: 2}
   m_IsPrefabParent: 0
@@ -958,7 +968,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 477418874}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 88.68751, y: -0.12000002, z: 0}
+  m_LocalPosition: {x: 0, y: -0.12, z: 0}
   m_LocalScale: {x: 1.5000021, y: 1.5000013, z: 1.5000013}
   m_Children: []
   m_Father: {fileID: 1566589429}

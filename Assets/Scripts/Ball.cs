@@ -52,14 +52,12 @@ public class Ball : MonoBehaviour, IResetable {
     {
         var collidedObject = collision.gameObject;
 
-        print(collidedObject.name);
-
         if (collidedObject.tag == "Player")
         {
             var SwPlayer = collidedObject.transform.GetChild(0).GetChild(0).gameObject;
             var audioSource = SwPlayer.transform.Find("Audio Source").GetComponent<AudioSource>();
 
-            if (owner != collidedObject)
+            if (owner != SwPlayer)
             {
                 ScoreManager scoreMgr = ScoreManager.Instance;
 
@@ -158,13 +156,11 @@ public class Ball : MonoBehaviour, IResetable {
             _isCrit = true;
             _critTimer = 0f;
             rd.material = _critStatusMat;
-            Debug.Log("buildup done");
             return;
         }
 
         if (_isCrit && _critTimer >= Ball.CRIT_TIMER)
         {
-            Debug.Log("Crit done");
             EndCrit();
         }
     }
