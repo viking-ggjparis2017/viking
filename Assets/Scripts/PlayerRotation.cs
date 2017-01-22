@@ -26,8 +26,8 @@ public class PlayerRotation : MonoBehaviour {
 
         foreach (Transform target in _affectedItems)
         {
-         //   var rot = new Vector3(0, 0, 0);
-         //   transform.rotation.eulerAngles = rot;
+            //print("target.rotation : " + target.rotation);
+           // print("movement * -1f : " + movement * -1f);
 
 //            print("target.rotation : " + target.rotation);
 //            print("movement * -1f : " + movement * -1f);
