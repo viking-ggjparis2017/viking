@@ -111,8 +111,7 @@ public class ScoreManager : MonoBehaviour {
                 Time.timeScale -= timeRedution;
 
             yield return new WaitForSeconds(0.5f);
-
-            print("stopCoroutine");
+            
         }
     }
 
@@ -120,7 +119,6 @@ public class ScoreManager : MonoBehaviour {
     {
         foreach (var obj in GameObject.FindGameObjectsWithTag("Player"))
         {
-            print(obj.name);
             obj.transform.GetChild(0).GetChild(0).GetComponent<PlayerMouvement>().Reset();
         }
 

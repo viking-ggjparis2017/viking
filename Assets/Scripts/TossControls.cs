@@ -19,9 +19,18 @@ public class TossControls : MonoBehaviour {
     [Range(1, 2), SerializeField]
     private int playerNumber = 1;
 
+    Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public void Update () {
 		if((playerNumber == 1 && Input.GetButtonDown("Stop_P1")) || (playerNumber == 2 && Input.GetButtonDown("Stop_P2")))
         {
+
+            _animator.SetTrigger("TossTrigger");
 
             CritRange RangeItem = GetInactiveRange();
             if (RangeItem != null)
