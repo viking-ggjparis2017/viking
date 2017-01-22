@@ -81,10 +81,7 @@ public class ScoreManager : MonoBehaviour {
     {
         AlreadyWon = true;
 
-        StartCoroutine(Scale());
-
-        Player01.gameObject.SetActive(false);
-        Player02.gameObject.SetActive(false);
+  //      StartCoroutine(Scale());
 
         finalScorePanel.SetActive(true);
 
@@ -94,8 +91,8 @@ public class ScoreManager : MonoBehaviour {
         else if(playerWhoWon == 2)
             playerVictory.text = "Player 02" + "\n" + "Victory !";
 
-        Player01.gameObject.SetActive(false);
-        Player02.gameObject.SetActive(false);
+        Player01.gameObject.transform.parent.gameObject.SetActive(false);
+        Player02.gameObject.transform.parent.gameObject.SetActive(false);
 
         finalScorePanel.transform.FindChild("Final_Score_P1").GetComponent<Text>().text = "Player 01" + "\n" + "Score: " + Player_1_Score.ToString();
         finalScorePanel.transform.FindChild("Final_Score_P2").GetComponent<Text>().text = "Player 02" + "\n" + "Score: " + Player_2_Score.ToString();
@@ -104,8 +101,6 @@ public class ScoreManager : MonoBehaviour {
     
     IEnumerator Scale()
     {
-        print(Time.timeScale);
-
         while (Time.timeScale != 0.0f)
         {
             float timeRedution = 0.4f;
@@ -116,6 +111,8 @@ public class ScoreManager : MonoBehaviour {
                 Time.timeScale -= timeRedution;
 
             yield return new WaitForSeconds(0.5f);
+
+            print("stopCoroutine");
         }
     }
 
@@ -135,6 +132,13 @@ public class ScoreManager : MonoBehaviour {
         }
 
         if (newGame)
+        {
+    //        StopAllCoroutines();
+    //        Time.timeScale = 1.0f;
+            Player_1_Score = Player_2_Score = 0;
+            Player01.gameObject.transform.parent.gameObject.SetActive(true);
+            Player02.gameObject.transform.parent.gameObject.SetActive(true);
             AlreadyWon = false;
+        }
     }
 }
