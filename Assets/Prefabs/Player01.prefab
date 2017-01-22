@@ -426,7 +426,7 @@ TrailRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 1
+    textureMode: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &114066035834676802
@@ -443,6 +443,7 @@ MonoBehaviour:
   _ballBody: {fileID: 0}
   _ballScript: {fileID: 0}
   _tossRadius: 30
+  _critRangePool: []
   playerNumber: 1
 --- !u!114 &114328509331711122
 MonoBehaviour:
