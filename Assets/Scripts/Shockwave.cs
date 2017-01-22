@@ -32,6 +32,9 @@ public class Shockwave : MonoBehaviour {
     [SerializeField]
     private Rigidbody _selfRigidBody = null;
 
+    [SerializeField]
+    private AudioSource _ballAudio = null;
+
     private bool _active = false;
     private float _currentLifeTime = 0f;
     private int _owner = 0;
@@ -93,11 +96,13 @@ public class Shockwave : MonoBehaviour {
         {
             forceMultiplier += _critMultiplier;
 
-            var audioSource = gameObject.GetComponent<AudioSource>();
-            audioSource.clip = SoundManager.instance.FindClipByName("SFX_ball_toss_low");
-            audioSource.Play();
-
-            Debug.Log(audioSource.clip);
+            _ballAudio.clip = SoundManager.instance.FindClipByName("SFX_ball_toss_low");
+            _ballAudio.Play();
+        }
+        else
+        {
+            _ballAudio.clip = SoundManager.instance.FindClipByName("SFX_attack");
+            _ballAudio.Play();
         }
 
         ballScript.Hit();
