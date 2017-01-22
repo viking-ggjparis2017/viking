@@ -20,6 +20,9 @@ public class ScoreManager : MonoBehaviour {
     [SerializeField]
     GameObject finalScorePanel;
 
+    [SerializeField]
+    private SoundMode _soundScript;
+
     bool AlreadyWon = false;
 
     void Awake()
@@ -60,6 +63,8 @@ public class ScoreManager : MonoBehaviour {
     {
         Player01.text = "Player 01 Score: " + Player_1_Score.ToString();
         Player02.text = "Player 02 Score: " + Player_2_Score.ToString();
+
+        _soundScript.UpdateScore(Mathf.Max(Player_1_Score, Player_2_Score));
     }
 
     void CheckVictory()
@@ -69,10 +74,12 @@ public class ScoreManager : MonoBehaviour {
             if (Player_1_Score == neededScore)
             {
                 ShowScoreCanvas(1);
+                _soundScript.GameEnd();
             }
             else if (Player_2_Score == neededScore)
             {
                 ShowScoreCanvas(2);
+                _soundScript.GameEnd();
             }
         }
     }
@@ -140,6 +147,7 @@ public class ScoreManager : MonoBehaviour {
             Player01.gameObject.transform.parent.gameObject.SetActive(true);
             Player02.gameObject.transform.parent.gameObject.SetActive(true);
             AlreadyWon = false;
+            _soundScript.ResetGame();
         }
     }
 }
