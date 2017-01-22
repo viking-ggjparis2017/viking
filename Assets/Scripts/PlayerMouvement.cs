@@ -14,8 +14,8 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     [Range(1, 2), SerializeField]
     public int playerNumber = 1;
 
-    string horizontalAxisName;
-    string verticalAxisName;
+    public string horizontalAxisName;
+    public string verticalAxisName;
 
     Rigidbody rb;
     
@@ -30,7 +30,6 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     private float _noControlLimit = 0f;
     
 	void Start () {
-        // rb = GetComponent<Rigidbody>();
         rb = GetComponentInParent<Rigidbody>();
 
         horizontalAxisName = "Horizontal_P" + playerNumber.ToString(); 
@@ -69,6 +68,7 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
         {
             return;
         }
+
 
         rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, -Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
                     , ForceMode.VelocityChange);
