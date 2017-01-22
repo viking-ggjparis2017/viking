@@ -30,7 +30,6 @@ public class FishMovement : MonoBehaviour {
             return;
         }
 
-        Debug.Log("fishmove");
         GetNewDestination();
         SetNewTimer();
         ApplyForce();
@@ -40,19 +39,16 @@ public class FishMovement : MonoBehaviour {
     {
         _destination.x = Random.Range(FishMovement.X_MIN, FishMovement.Z_MAX);
         _destination.z = Random.Range(FishMovement.Z_MIN, FishMovement.Z_MAX);
-        Debug.Log("Dest " + _destination.ToString());
     }
 
     private void SetNewTimer()
     {
         _waitTimer = Random.Range(0.5f, FishMovement.WAIT_MAX);
-        Debug.Log("wait " + _waitTimer);
     }
 
     private void ApplyForce()
     {
         Vector3 dir = _destination - _selfTransform.position;
-        Debug.Log("dest " + dir.ToString());
         _selfRigidBody.AddForce(dir * Random.Range(0.1f, 1f), ForceMode.Impulse);
     }
 }
