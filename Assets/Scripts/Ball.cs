@@ -52,17 +52,20 @@ public class Ball : MonoBehaviour, IResetable {
     {
         var collidedObject = collision.gameObject;
 
+        print(collidedObject.name);
+
         if (collidedObject.tag == "Player")
         {
-            var audioSource = collidedObject.transform.Find("Audio Source").GetComponent<AudioSource>();
+            var SwPlayer = collidedObject.transform.GetChild(0).GetChild(0).gameObject;
+            var audioSource = SwPlayer.transform.Find("Audio Source").GetComponent<AudioSource>();
 
             if (owner != collidedObject)
             {
                 ScoreManager scoreMgr = ScoreManager.Instance;
 
-                if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 1 && owner != null)
+                if (SwPlayer.GetComponent<PlayerMouvement>().playerNumber == 1 && owner != null)
                     scoreMgr.IncrementPlayer02Score();
-                else if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 2 && owner != null)
+                else if (SwPlayer.GetComponent<PlayerMouvement>().playerNumber == 2 && owner != null)
                     scoreMgr.IncrementPlayer01Score();
 
                 audioSource.clip = SoundManager.instance.FindClipByName("SFX_impact");

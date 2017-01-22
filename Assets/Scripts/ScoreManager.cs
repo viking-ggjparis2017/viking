@@ -119,7 +119,10 @@ public class ScoreManager : MonoBehaviour {
     public void ResetScene(bool newGame)
     {
         foreach (var obj in GameObject.FindGameObjectsWithTag("Player"))
-            obj.GetComponent<PlayerMouvement>().Reset();
+        {
+            print(obj.name);
+            obj.transform.GetChild(0).GetChild(0).GetComponent<PlayerMouvement>().Reset();
+        }
 
         foreach (var obj in GameObject.FindGameObjectsWithTag("Ball"))
             obj.GetComponent<Ball>().Reset();

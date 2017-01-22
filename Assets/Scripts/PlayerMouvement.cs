@@ -23,6 +23,7 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
 
     //----- reset variable
     Vector3 resetPosition;
+    Vector3 resetParentPosition;
     Quaternion resetRotation;
 
     private bool _noControl = false;
@@ -37,6 +38,7 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
 
         resetPosition = transform.position;
         resetRotation = transform.rotation;
+        resetParentPosition = transform.parent.parent.position;
 
        _animator = GetComponent<Animator>();
 
@@ -82,6 +84,7 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
     {
         transform.position = resetPosition;
         transform.rotation = resetRotation;
+        transform.parent.parent.position = resetParentPosition;
 
         StopControl(0.25f);
     }
