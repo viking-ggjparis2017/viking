@@ -91,7 +91,6 @@ public class Shockwave : MonoBehaviour {
 
         if(ballScript.IsCritActive())
         {
-            Debug.Log("CRIT!");
             forceMultiplier += _critMultiplier;
         }
 
