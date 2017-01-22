@@ -32,13 +32,13 @@ public class PlayerRotation : MonoBehaviour {
             _startVector = target.rotation;
             _endVector = Quaternion.LookRotation(movement * -1f);
 
-            Quaternion yourRotationQuaternion = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed);
+            //Quaternion yourRotationQuaternion = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed);
 
-            yourRotationQuaternion = Quaternion.Euler(new Vector3(yourRotationQuaternion.eulerAngles.x, target.transform.rotation.eulerAngles.y, yourRotationQuaternion.eulerAngles.z));
+            //yourRotationQuaternion = Quaternion.Euler(new Vector3(yourRotationQuaternion.eulerAngles.x, target.transform.rotation.eulerAngles.y, yourRotationQuaternion.eulerAngles.z));
 
-            target.rotation = yourRotationQuaternion;
+            //target.rotation = yourRotationQuaternion;
 
-            //target.rotation = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed);
+            target.rotation = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed);
         }
     }
 }
