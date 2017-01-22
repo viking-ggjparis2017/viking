@@ -2552,6 +2552,17 @@ Prefab:
       propertyPath: _ballScript
       value: 
       objectReference: {fileID: 609701747}
+    - target: {fileID: 95618857268817264, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ce585a49bca952643ac2f743d2cb1b5f, type: 2}
+    - target: {fileID: 212502540240869394, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 34017e28a0c4e99459513b6d3399446b,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b93b7bda34ec9e0469891f9fafdee875, type: 2}
   m_IsPrefabParent: 0
