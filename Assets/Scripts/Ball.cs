@@ -54,6 +54,8 @@ public class Ball : MonoBehaviour, IResetable {
 
         if (collidedObject.tag == "Player")
         {
+            var audioSource = collidedObject.transform.Find("Audio Source").GetComponent<AudioSource>();
+
             if (owner != collidedObject)
             {
                 ScoreManager scoreMgr = ScoreManager.Instance;
@@ -63,7 +65,15 @@ public class Ball : MonoBehaviour, IResetable {
                 else if (collidedObject.GetComponent<PlayerMouvement>().playerNumber == 2 && owner != null)
                     scoreMgr.IncrementPlayer01Score();
 
+                audioSource.clip = SoundManager.instance.FindClipByName("SFX_impact");
+                audioSource.Play();
+
                 scoreMgr.ResetScene(false);
+            }
+            else
+            {
+                audioSource.clip = SoundManager.instance.FindClipByName("SFX_dodge");
+                audioSource.Play();
             }
         }
     }

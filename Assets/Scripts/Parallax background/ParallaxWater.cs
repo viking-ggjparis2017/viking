@@ -17,7 +17,7 @@ public class ParallaxWater : MonoBehaviour {
     {
         var posRatio = (ball.transform.position.x / _ratio) * Time.deltaTime;
 
-        print("pr : " + posRatio);
+//        print("pr : " + posRatio);
         gameObject.GetComponent<Renderer>().material.mainTextureOffset = new Vector2(posRatio, 0);
     }
 

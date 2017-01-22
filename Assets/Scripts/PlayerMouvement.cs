@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fabric;
 
 public class PlayerMouvement : MonoBehaviour, IResetable {
 
@@ -19,6 +20,8 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
 
     Rigidbody rb;
 
+    Animator _animator;
+
     //----- reset variable
     Vector3 resetPosition;
     Quaternion resetRotation;
@@ -35,6 +38,9 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
 
         resetPosition = transform.position;
         resetRotation = transform.rotation;
+
+        _animator = GetComponentInParent<Animator>();
+
     }
 	
 	void Update () {
@@ -66,6 +72,17 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
 
         rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, -Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
                     , ForceMode.VelocityChange);
+
+        //        print("horizontalAxisName : " + Input.GetAxis(horizontalAxisName));
+        //        print("verticalAxisName : " + Input.GetAxis(verticalAxisName));
+
+        _animator.GetBool("Test");
+
+        //_animator.GetFloat("X_Axis_Mouvement");
+
+//        _animator.SetFloat("X_Axis_Mouvement", 1);
+   //     _animator.SetFloat("Y_Axis_Mouvement", Input.GetAxis(verticalAxisName));
+
     }
 
     public void Reset()
