@@ -2556,7 +2556,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ce585a49bca952643ac2f743d2cb1b5f, type: 2}
+      objectReference: {fileID: 9100000, guid: b5340cf46d0f6e74d8cc38237830dac6, type: 2}
     - target: {fileID: 212502540240869394, guid: b93b7bda34ec9e0469891f9fafdee875,
         type: 2}
       propertyPath: m_Sprite
@@ -3320,6 +3320,11 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 95618857268817264, guid: b93b7bda34ec9e0469891f9fafdee875,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ce585a49bca952643ac2f743d2cb1b5f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b93b7bda34ec9e0469891f9fafdee875, type: 2}
   m_IsPrefabParent: 0

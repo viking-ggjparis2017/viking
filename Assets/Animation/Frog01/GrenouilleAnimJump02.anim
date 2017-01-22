@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GrenouilleAnimJump
+  m_Name: GrenouilleAnimJump02
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -106,15 +106,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
+      value: {fileID: 21300000, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
     - time: 0.1
-      value: {fileID: 21300002, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
+      value: {fileID: 21300002, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
     - time: 0.21666667
-      value: {fileID: 21300004, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
+      value: {fileID: 21300004, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300006, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
+      value: {fileID: 21300006, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
     - time: 0.43333334
-      value: {fileID: 21300008, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
+      value: {fileID: 21300008, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
     attribute: m_Sprite
     path: Grenouille
     classID: 212
@@ -170,11 +170,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
-    - {fileID: 21300002, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
-    - {fileID: 21300004, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
-    - {fileID: 21300006, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
-    - {fileID: 21300008, guid: 75b076fe7e134ab439f5f281b91fb321, type: 3}
+    - {fileID: 21300000, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
+    - {fileID: 21300002, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
+    - {fileID: 21300004, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
+    - {fileID: 21300006, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
+    - {fileID: 21300008, guid: 34017e28a0c4e99459513b6d3399446b, type: 3}
     - {fileID: 0}
     - {fileID: 21300000, guid: 9ea6a78a329b28c4da0047fcd87a47c3, type: 3}
     - {fileID: 21300002, guid: 9ea6a78a329b28c4da0047fcd87a47c3, type: 3}
