@@ -26,8 +26,8 @@ public class PlayerRotation : MonoBehaviour {
 
         foreach (Transform target in _affectedItems)
         {
-            print("target.rotation : " + target.rotation);
-            print("movement * -1f : " + movement * -1f);
+            //print("target.rotation : " + target.rotation);
+           // print("movement * -1f : " + movement * -1f);
 
             _startVector = target.rotation;
             _endVector = Quaternion.LookRotation(movement * -1f);

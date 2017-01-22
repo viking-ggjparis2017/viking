@@ -73,8 +73,8 @@ public class PlayerMouvement : MonoBehaviour, IResetable {
         rb.AddForce(new Vector3(Input.GetAxis(horizontalAxisName) * mouvementSpeed * Time.deltaTime, 0, -Input.GetAxis(verticalAxisName) * mouvementSpeed * Time.deltaTime)
                     , ForceMode.VelocityChange);
 
-          _animator.SetFloat("X_Axis_Mouvement",  Mathf.Abs(Input.GetAxis(horizontalAxisName)));
-          _animator.SetFloat("Y_Axis_Mouvement", Mathf.Abs(Input.GetAxis(verticalAxisName)));
+          //_animator.SetFloat("X_Axis_Mouvement",  Mathf.Abs(Input.GetAxis(horizontalAxisName)));
+          //_animator.SetFloat("Y_Axis_Mouvement", Mathf.Abs(Input.GetAxis(verticalAxisName)));
 
     }
 
