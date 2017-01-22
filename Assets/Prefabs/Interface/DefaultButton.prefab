@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114578861156860218}
   - component: {fileID: 114054976088247048}
   m_Layer: 5
-  m_Name: LaunchButton
+  m_Name: DefaultButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
