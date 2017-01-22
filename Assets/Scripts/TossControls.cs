@@ -42,6 +42,10 @@ public class TossControls : MonoBehaviour {
             if (IsBallInRange() && _ballScript.HasOwner())
             {
 
+                var audioSource = transform.Find("Audio Source").GetComponent<AudioSource>();
+                audioSource.clip = SoundManager.instance.FindClipByName("SFX_toss");
+                audioSource.Play();
+
                 _ballScript.Toss(playerNumber);
             }
         }

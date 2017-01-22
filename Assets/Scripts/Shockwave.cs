@@ -92,6 +92,12 @@ public class Shockwave : MonoBehaviour {
         if(ballScript.IsCritActive())
         {
             forceMultiplier += _critMultiplier;
+
+            var audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.clip = SoundManager.instance.FindClipByName("SFX_ball_toss_low");
+            audioSource.Play();
+
+            Debug.Log(audioSource.clip);
         }
 
         ballScript.Hit();
