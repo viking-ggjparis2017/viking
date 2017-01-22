@@ -37,14 +37,14 @@ public class PlayerRotation : MonoBehaviour {
             Quaternion targeta = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
             transform.rotation = Quaternion.Slerp(targeta, Quaternion.LookRotation(movement * -1f), Time.fixedDeltaTime * _rotationSpeed);*/
 
-            Debug.Log(target);
+    //        Debug.Log(target);
 
         target.rotation = Quaternion.Slerp(
             target.rotation,
             Quaternion.LookRotation(movement),
             Time.deltaTime * _rotationSpeed
         );
-            Debug.Log(target.rotation);
+//            Debug.Log(target.rotation);
 
 
             //Quaternion yourRotationQuaternion = Quaternion.Slerp(_startVector, _endVector, Time.fixedDeltaTime * _rotationSpeed);

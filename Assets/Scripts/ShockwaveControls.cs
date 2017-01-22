@@ -16,6 +16,13 @@ public class ShockwaveControls : MonoBehaviour {
     [Range(1, 2), SerializeField]
     private int playerNumber = 1;
 
+    Animator _animator;
+
+    public void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public void FixedUpdate () {
 	    if( (playerNumber == 1 && Input.GetButtonDown("Fire_P1")) || (playerNumber == 2 && Input.GetButtonDown("Fire_P2")) )
         {
@@ -23,9 +30,13 @@ public class ShockwaveControls : MonoBehaviour {
 
             if(dropObject != null)
             {
+                _animator.SetTrigger("JumpTrigger");
+
                 dropObject.SetOwner(playerNumber);
                 dropObject.Drop(_playerRigidBody.position);
                 _movementScript.StopControl(0.25f);
+                
+                //_animator.ResetTrigger("JumpTrigger");
             }
         }
 	}
