@@ -21,6 +21,7 @@ public class MainMenuManager : MonoBehaviour {
     {
         _LaunchText.text = _translationContainer.getTranslation("BUTTON_START_GAME");
         _HelpText.text = _translationContainer.getTranslation("BUTTON_HELP_PANEL");
+        _ExitText.text = _translationContainer.getTranslation("BUTTON_EXIT_GAME");
     }
 
     public void StartGame()
@@ -39,5 +40,10 @@ public class MainMenuManager : MonoBehaviour {
         _Buttons.SetActive(true);
         _HelpPanel.SetActive(false);
     }
-    
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }
