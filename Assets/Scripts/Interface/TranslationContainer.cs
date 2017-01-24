@@ -15,6 +15,11 @@ public class TranslationContainer : MonoBehaviour {
             { SystemLanguage.English, "Start Game" },
             { SystemLanguage.French, "Commencer" }
         });
+
+        _translations["BUTTON_HELP_PANEL"] = new Translation(new Dictionary<SystemLanguage, string>() {
+            { SystemLanguage.English, "Help me !" },
+            { SystemLanguage.French, "À l'aide !" }
+        });
     }
 
 	public string getTranslation(string key)
