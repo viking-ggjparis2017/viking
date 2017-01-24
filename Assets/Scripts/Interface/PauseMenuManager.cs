@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class PauseMenuManager : MonoBehaviour {
 
     [SerializeField]
+    TranslationContainer _translationContainer = null;
+
+    [SerializeField]
     Text _Pause, _ReturnGame;
 
     [SerializeField]
@@ -26,6 +29,8 @@ public class PauseMenuManager : MonoBehaviour {
             else
                 UnSetPause();
         }
+
+        _ReturnGame.text = _translationContainer.getTranslation("BUTTON_RETURN_GAME");
     }
 
     public void SetPause()

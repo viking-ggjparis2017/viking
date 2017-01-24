@@ -25,7 +25,12 @@ public class TranslationContainer : MonoBehaviour {
             { SystemLanguage.English, "Exit" },
             { SystemLanguage.French, "Quitter" }
         });
-        
+
+        _translations["BUTTON_RETURN_GAME"] = new Translation(new Dictionary<SystemLanguage, string>() {
+            { SystemLanguage.English, "Return in game" },
+            { SystemLanguage.French, "Retourner en jeu" }
+        });
+
     }
 
 	public string getTranslation(string key)
