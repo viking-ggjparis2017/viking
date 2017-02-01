@@ -148,6 +148,7 @@ public class ScoreManager : MonoBehaviour {
             Player02.gameObject.transform.parent.gameObject.SetActive(true);
             AlreadyWon = false;
             _soundScript.ResetGame();
+            newGame = false;
         }
     }
 }

@@ -18,7 +18,6 @@ public class SoundMode : MonoBehaviour {
         {
             sound2.mute = false;
         }
-
         if(score >= 4 && sound3.mute)
         {
             sound3.mute = false;
@@ -39,7 +38,7 @@ public class SoundMode : MonoBehaviour {
         sound2.Play();
         sound2.mute = true;
         sound3.Play();
-        sound2.mute = true;
+        sound3.mute = true;
         victory.Stop();
     }
 }
